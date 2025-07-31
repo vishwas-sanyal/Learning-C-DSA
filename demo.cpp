@@ -2,13 +2,21 @@
 using namespace std;
 int main()
 {
-    int a, b;
-    cout << "Enter the value of a & b: ";
-    cin >> a >> b;
-    cout << "Addition= " << a + b << endl;
-    cout << "Subtraction= " << a - b << endl;
-    cout << "Multiplication= " << a * b << endl;
-    cout << "Division= " << a / b << endl;
-    cout << "Modulo= " << a % b << endl;
+    char ch;
+    cout << "Enter a character: ";
+    cin >> ch;
+
+    if (ch >= 'a' && ch <= 'z')
+    {
+        cout << ch << " is lowercase" << endl;
+    }
+    else if (ch >= 'A' && ch <= 'Z')
+    {
+        cout << ch << " is Uppercase" << endl;
+    }
+    else
+    {
+        cout << "Its not a character" << endl;
+    }
     return 0;
 }
