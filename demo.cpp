@@ -2,21 +2,32 @@
 using namespace std;
 int main()
 {
-    char ch;
-    cout << "Enter a character: ";
-    cin >> ch;
+    // Print numbers 1 to n
+    int n;
+    cout << "Enter a number: ";
+    cin >> n;
+    // while loop
+    int i = 1;
+    while (i <= n)
+    {
+        cout << i;
+        i++;
+    }
+    cout << endl;
+    // for loop
+    for (int j = 1; j <= n; j++)
+    {
+        cout << j;
+    }
+    cout << endl;
+    // do-while loop
+    int k = 1;
+    do
+    {
+        cout << k;
+        k++;
+    } while (k <= n);
+    cout << endl;
 
-    if (ch >= 'a' && ch <= 'z')
-    {
-        cout << ch << " is lowercase" << endl;
-    }
-    else if (ch >= 'A' && ch <= 'Z')
-    {
-        cout << ch << " is Uppercase" << endl;
-    }
-    else
-    {
-        cout << "Its not a character" << endl;
-    }
     return 0;
 }
