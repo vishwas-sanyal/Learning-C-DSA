@@ -2,32 +2,19 @@
 using namespace std;
 int main()
 {
-    // Print numbers 1 to n
+    // Check if the number is prime or not
     int n;
     cout << "Enter a number: ";
     cin >> n;
-    // while loop
-    int i = 1;
-    while (i <= n)
+    bool isPrime = true;
+    for (int i = 2; i * i <= n; i++)
     {
-        cout << i;
-        i++;
+        if (n % i == 0)
+        {
+            isPrime = false;
+            break;
+        }
     }
-    cout << endl;
-    // for loop
-    for (int j = 1; j <= n; j++)
-    {
-        cout << j;
-    }
-    cout << endl;
-    // do-while loop
-    int k = 1;
-    do
-    {
-        cout << k;
-        k++;
-    } while (k <= n);
-    cout << endl;
-
+    cout << (isPrime ? "Prime" : "non Prime") << endl;
     return 0;
 }
