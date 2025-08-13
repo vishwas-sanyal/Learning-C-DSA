@@ -1,20 +1,20 @@
 #include <iostream>
 using namespace std;
 
-int minNum(int a, int b)
+int sumOfDigits(int num)
 {
-    if (a < b)
+    int digSum = 0;
+    while (num > 0)
     {
-        return b;
+        int lastDig = num % 10;
+        num /= 10;
+        digSum += lastDig;
     }
-    else
-    {
-        return a;
-    }
+    return digSum;
 }
 
 int main()
 {
-    cout << minNum(5, 8);
+    cout << sumOfDigits(726);
     return 0;
 }
