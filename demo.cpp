@@ -1,20 +1,34 @@
 #include <iostream>
 using namespace std;
 
-int sumOfDigits(int num)
+int decToBinary(int decNum)
 {
-    int digSum = 0;
-    while (num > 0)
+    int ans = 0, pow = 1;
+    while (decNum > 0)
     {
-        int lastDig = num % 10;
-        num /= 10;
-        digSum += lastDig;
+        int rem = decNum % 2;
+        decNum /= 2;
+        ans += (rem * pow);
+        pow *= 10;
     }
-    return digSum;
+    return ans;
+}
+int binToDecimal(int binNum)
+{
+    int ans = 0, pow = 1;
+    while (binNum > 0)
+    {
+        int rem = binNum % 10;
+        ans += (rem * pow);
+        binNum /= 10;
+        pow *= 2;
+    }
+    return ans;
 }
 
 int main()
 {
-    cout << sumOfDigits(726);
+    cout << decToBinary(50) << endl;
+    cout << binToDecimal(110010) << endl;
     return 0;
 }
