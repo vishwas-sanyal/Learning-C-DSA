@@ -2,71 +2,72 @@
 #include <climits>
 using namespace std;
 
-// int LSA(int num[], int size, int target)
-// {
-//     for (int i = 0; i < size; i++)
-//     {
-//         if (target == num[i])
-//         {
-//             return i;
-//         }
-//     }
-//     return -1;
-// }
+int LSA(int numC[], int sizeC, int target)
+{
+    for (int i = 0; i < sizeC; i++)
+    {
+        if (target == numC[i])
+        {
+            return i;
+        }
+    }
+    return -1;
+}
 
 int main()
 {
-    // int numbers[5] = {1, 2, 3, 4, 5}; // Arrays
-    // int num[10];
-    // int size = sizeof(num) / sizeof(int); // Loops in Arrays
-    // for (int i = 0; i < size; i++)
-    // {
-    //     cin >> num[i];
-    // }
-    // for (int i = 0; i < size; i++)
-    // {
-    //     cout << num[i] << endl;
-    // }
+    int numbers[5] = {1, 2, 3, 4, 5}; // Arrays
 
-    // Find smallest/largest in Array
-    // int num[5] = {88, 18, 73, 53, 85};       //Smallest
-    // int size = sizeof(num) / sizeof(int);
-    // int small = INT_MAX;
-    // for (int i = 0; i < size; i++)
-    // {
-    //     if (num[i] < small)
-    //         small = num[i];
-    // }
-    // cout << small << endl;
-    //////////////////////////////////////////
-    // int num[5] = {88, 18, 73, 53, 85}; // Largest
-    // int size = sizeof(num) / sizeof(int);
-    // int big = INT_MIN;
-    // for (int i = 0; i < size; i++)
-    // {
-    //     if (num[i] < big)
-    //         big = num[i];
-    // }
-    // cout << big << endl;
-
-    // Linear Search
-    // int num[5] = {83, 22, 44, 75, 23};
-    // int size = sizeof(num) / sizeof(int);
-    // int target = 84;
-    // cout << LSA(num, size, target) << endl;
-
-    int num[7] = {3, 6, 4, 5, 2, 1, 5};
-    int size = sizeof(num) / sizeof(int);
-    int start = 0, end = size - 1;
-    while (start < end)
+    int num[10];
+    int size = sizeof(num) / sizeof(int); // Loops in Arrays
+    for (int i = 0; i < size; i++)
     {
-        swap(num[start], num[end]);
-        start++;
-        end--;
+        cin >> num[i];
     }
     for (int i = 0; i < size; i++)
     {
-        cout << num[i];
+        cout << num[i] << endl;
+    }
+
+    // Find smallest/largest in Array
+    int numA[5] = {88, 18, 73, 53, 85}; // Smallest
+    int sizeA = sizeof(numA) / sizeof(int);
+    int small = INT_MAX;
+    for (int i = 0; i < sizeA; i++)
+    {
+        if (numA[i] < small)
+            small = numA[i];
+    }
+    cout << small << endl;
+    //////////////////////////////////////////
+    int numB[5] = {88, 18, 73, 53, 85}; // Largest
+    int sizeB = sizeof(numB) / sizeof(int);
+    int big = INT_MIN;
+    for (int i = 0; i < sizeB; i++)
+    {
+        if (numB[i] > big)
+            big = numB[i];
+    }
+    cout << big << endl;
+
+    // Linear Search
+    int numC[5] = {83, 22, 44, 75, 23};
+    int sizeC = sizeof(numC) / sizeof(int);
+    int target = 44;
+    cout << LSA(numC, sizeC, target) << endl;
+
+    int numD[7] = {3, 6, 4, 5, 2, 1, 5};
+    int sizeD = sizeof(numD) / sizeof(int);
+    int start = 0, end = sizeD - 1;
+    while (start < end)
+    {
+        swap(numD[start], numD[end]);
+        start++;
+        end--;
+    }
+    for (int i = 0; i < sizeD; i++)
+    {
+        cout << numD[i];
     }
     cout << endl;
     return 0;
