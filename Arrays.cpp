@@ -56,6 +56,7 @@ int main()
     int target = 44;
     cout << LSA(numC, sizeC, target) << endl;
 
+    // Reverse an Array
     int numD[7] = {3, 6, 4, 5, 2, 1, 5};
     int sizeD = sizeof(numD) / sizeof(int);
     int start = 0, end = sizeD - 1;
@@ -70,5 +71,6 @@ int main()
         cout << numD[i];
     }
     cout << endl;
+
     return 0;
 }
