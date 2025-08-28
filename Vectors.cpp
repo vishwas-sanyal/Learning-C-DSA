@@ -44,5 +44,66 @@ int main()
         ans = ans ^ val; // ans ^= val;
     }
     cout << ans << endl; // return ans;
+
+    // Pair Sum - Return pair in sorted array with target sum
+    /*int arr[4] = {2, 7, 11, 15};
+    vector<int> numsA;
+    int target = 13, n = 4;
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = i + 1; j < n; j++)
+        {
+            if (arr[i] + arr[j] == target)
+            {
+                numsA.push_back(i);
+                numsA.push_back(j);
+                cout << numsA[0] << ", " << numsA[1] << endl;
+            }
+        }
+    }*/
+    // Optimal
+    int arr[4] = {2, 7, 11, 15};
+    vector<int> sum;
+    int target = 13, n = 4;
+    int i = 0, j = n - 1;
+    while (i < j)
+    {
+        int pairSum = arr[i] + arr[j];
+        if (pairSum > target)
+        {
+            j--;
+        }
+        else if (pairSum < target)
+        {
+            i++;
+        }
+        else
+        {
+            sum.push_back(i);
+            sum.push_back(j);
+            cout << sum[0] << ", " << sum[1] << endl;
+            break;
+        }
+    }
+
+    // Majority Element (Brute Force)
+    vector<int> vecF = {2, 2, 1, 1, 1, 2, 2};
+    int nF = vecF.size();
+    for (int val : vecF)
+    {
+        int freq = 0;
+        for (int el : vecF)
+        {
+            if (el == val)
+            {
+                freq++;
+            }
+        }
+        if (freq > nF / 2)
+        {
+            cout << "Majority Element = " << val << endl;
+        }
+        break;
+    }
     return 0;
 }
