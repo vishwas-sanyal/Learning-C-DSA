@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 using namespace std;
 
 int main()
@@ -87,7 +88,7 @@ int main()
     }
 
     // Majority Element (Brute Force)
-    vector<int> vecF = {2, 2, 1, 1, 1, 2, 2};
+    /*vector<int> vecF = {2, 2, 1, 1, 1, 2, 2};
     int nF = vecF.size();
     for (int val : vecF)
     {
@@ -104,6 +105,48 @@ int main()
             cout << "Majority Element = " << val << endl;
         }
         break;
+    }*/
+    // Optimized
+    /*vector<int> vecF = {2, 2, 1, 1, 1, 2, 2};
+    sort(vecF.begin(), vecF.end());
+    int nF = vecF.size();
+    int ansF = vecF[0], freq = 1;
+    for (int i = 1; i < nF; i++)
+    {
+        if (vecF[i] == vecF[i - 1])
+        {
+            freq++;
+        }
+        else
+        {
+            freq = 1;
+            ansF = vecF[i];
+        }
+        if (freq > nF / 2)
+        {
+            cout << "Majority Element = " << ansF << endl;
+        }
+    }*/
+    // Morre's Voting Algorithm
+    vector<int> vecF = {2, 2, 1, 1, 1, 2, 2};
+    sort(vecF.begin(), vecF.end());
+    int nF = vecF.size();
+    int ansF = 0, freq = 0;
+    for (int i = 0; i < nF; i++)
+    {
+        if (freq == 0)
+        {
+            ans = vecF[i];
+        }
+        if (ansF = vecF[i])
+        {
+            freq++;
+        }
+        else
+        {
+            freq--;
+        }
     }
+    cout << "Majority Element = " << ansF << endl;
     return 0;
 }
