@@ -36,16 +36,6 @@ int main()
     cout << vecE.size() << endl;
     cout << vecE.capacity() << endl;
 
-    // Problem: 136. Single Number
-    vector<int> nums = {4, 1, 2, 1, 2};
-    // int singleNumber(vector<int> nums)
-    int ans = 0;
-    for (int val : nums)
-    {
-        ans = ans ^ val; // ans ^= val;
-    }
-    cout << ans << endl; // return ans;
-
     // Pair Sum - Return pair in sorted array with target sum
     /*int arr[4] = {2, 7, 11, 15};
     vector<int> numsA;
@@ -107,7 +97,7 @@ int main()
         break;
     }*/
     // Optimized
-    /*vector<int> vecF = {2, 2, 1, 1, 1, 2, 2};
+    vector<int> vecF = {2, 2, 1, 1, 1, 2, 2};
     sort(vecF.begin(), vecF.end());
     int nF = vecF.size();
     int ansF = vecF[0], freq = 1;
@@ -126,27 +116,6 @@ int main()
         {
             cout << "Majority Element = " << ansF << endl;
         }
-    }*/
-    // Morre's Voting Algorithm
-    vector<int> vecF = {2, 2, 1, 1, 1, 2, 2};
-    sort(vecF.begin(), vecF.end());
-    int nF = vecF.size();
-    int ansF = 0, freq = 0;
-    for (int i = 0; i < nF; i++)
-    {
-        if (freq == 0)
-        {
-            ans = vecF[i];
-        }
-        if (ansF = vecF[i])
-        {
-            freq++;
-        }
-        else
-        {
-            freq--;
-        }
     }
-    cout << "Majority Element = " << ansF << endl;
     return 0;
 }
