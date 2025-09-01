@@ -101,17 +101,5 @@ int main()
     }
     cout << "Max Subarray Sum = " << maxSum << endl;*/
 
-    // Kadane's Algorithm
-    // Problem: 53. Maximum Subarray
-    int maxSum = INT_MIN;
-    int currSum = 0;
-    for (int i = 0; i < n; i++)
-    {
-        currSum += arr[i];
-        maxSum = max(currSum, maxSum);
-        if (currSum < 0)
-            currSum = 0;
-    }
-    cout << "Max Subarray Sum = " << maxSum << endl;
     return 0;
 }
